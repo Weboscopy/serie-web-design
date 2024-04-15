@@ -3,47 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accordéons</title>
+    <title>Vidéos</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <ul class="accordeon">
-        <li class="tab">
-            <div class="icon">
-                <img src="./images/web.svg" alt="web">
-            </div>
-            <div class="text">
-                <h1>Web</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, officia maiores! Modi itaque dolores nisi doloribus illum deleniti quod assumenda!</p>
-            </div>
-        </li>
-        <li class="tab">
-            <div class="icon">
-                <img src="./images/idea.svg" alt="idea">
-            </div>
-            <div class="text">
-                <h1>Créativité</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, officia maiores! Modi itaque dolores nisi doloribus illum deleniti quod assumenda!</p>
-            </div>
-        </li>
-        <li class="tab">
-            <div class="icon">
-                <img src="./images/code.svg" alt="code">
-            </div>
-            <div class="text">
-                <h1>Programmation</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, officia maiores! Modi itaque dolores nisi doloribus illum deleniti quod assumenda!</p>
-            </div>
-        </li>
-        <li class="tab">
-            <div class="icon">
-                <img src="./images/palette.svg" alt="palette">
-            </div>
-            <div class="text">
-                <h1>Design</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, officia maiores! Modi itaque dolores nisi doloribus illum deleniti quod assumenda!</p>
-            </div>
-        </li>
-    </ul>
+    <header>
+        <video src="./video.mp4" autoplay muted loop alt="© Vidéo de Pressmaster © Pexels"></video>
+        <div class="text">
+            <h1>Mon Super Site</h1>
+            <h3>Avec une vidéo sur la page d'accueil</h3>
+            <a href="#more">En savoir plus</a>
+        </div>
+    </header>
+    <section id="more">
+        <h4>Intégration d'une vidéo youtube</h4>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/kVkfr0qQ6Dg?si=cYs_sVOnsMK5UToM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </section>
 </body>
 </html>
