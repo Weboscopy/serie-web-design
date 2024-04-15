@@ -1,26 +1,21 @@
-const toggler = document.getElementById("toggler")
+const tabs = document.querySelectorAll(".tab")
+const items = document.querySelectorAll(".item")
+const line = document.querySelector(".line")
 
-const initApp = () => {
-    let mode = JSON.parse(localStorage.getItem("mode")) ?? false 
 
-    toggler.addEventListener("change", () => {
-        mode = !mode 
-        setTheme()
+const app = () => {
+    tabs.forEach((tab, index) => {
+        tab.addEventListener("click", (e) => {
+            tabs.forEach(tab => tab.classList.remove("active"))
+            tab.classList.add("active")
+
+            line.style.width = e.target.offsetWidth + "px"
+            line.style.left =  e.target.offsetLeft + "px"
+
+            items.forEach(item => item.classList.remove("active"))
+            items[index].classList.add("active")
+        })
     })
-
-    function setTheme(){
-        if(mode){
-            document.body.style.backgroundColor = "#333"
-            toggler.checked = true 
-            localStorage.setItem("mode", JSON.stringify(true))
-        } else {
-            document.body.style.backgroundColor = "white"
-            toggler.checked = false 
-            localStorage.setItem("mode", JSON.stringify(false))
-        }
-    }
-
-    setTheme()
 }
 
-document.addEventListener("DOMContentLoaded", initApp)
+document.addEventListener("DOMContentLoaded", app)
