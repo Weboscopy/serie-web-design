@@ -1,23 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vidéos</title>
+    <title>Témoignages</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    <header>
-        <video src="./video.mp4" autoplay muted loop alt="© Vidéo de Pressmaster © Pexels"></video>
-        <div class="text">
-            <h1>Mon Super Site</h1>
-            <h3>Avec une vidéo sur la page d'accueil</h3>
-            <a href="#more">En savoir plus</a>
-        </div>
-    </header>
-    <section id="more">
-        <h4>Intégration d'une vidéo youtube</h4>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/kVkfr0qQ6Dg?si=cYs_sVOnsMK5UToM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <section class="container">
+        <figure class="card">
+            <img src="./user1.jpg" alt="photo utilisateur témoignage" class="top">
+            <blockquote class="middle">
+                Cela fait des années que j'utilise ce service qui répond parfaitement à mes attentes. Je remeercie toute votre équipe pour les précieux conseils que vous m'avez donnés 🚀
+            </blockquote>
+            <figcaption class="bottom">
+                <cite>Maëlle Cora</cite>
+                <h4>Développeuse Fullstack</h4>
+            </figcaption>
+        </figure>
+        <figure class="card featured">
+            <img class="top" src="./user2.jpg" alt="user_pic">
+            <blockquote class="middle">
+                Un service de très grande qualité et des solutions sur mesure ! Professionnalisme toujours au rendez-vous. C'est exactement ce dont j'avais besoin pour le développement de mon application mobile.
+            </blockquote>
+            <figcaption class="bottom">
+                <cite>Colin Serrat</cite>
+                <h4>Web designer freelance</h4>
+            </figcaption>
+        </figure>
+        <figure class="card">
+            <img class="top" src="./user1.jpg" alt="user_pic">
+            <blockquote class="middle">
+                Des produits toujours au top, avec un suivi très sérieux! Des opérateurs toujours disponibles pour vous aider à résoudre des problèmes techniques. Je ne regrette pas de les avoir choisi
+            </blockquote>
+            <figcaption class="bottom">
+                <cite>David Lagache</cite>
+                <h4>Consultant IT</h4>
+            </figcaption>
+        </figure>
     </section>
 </body>
+
 </html>
