@@ -5,35 +5,71 @@
 }
 
 body{
-    background-color: #333;
     min-height: 100vh;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.progress{
+input{
+    visibility: hidden;
+}
+
+label{
+    width: 5.8rem;
+    height: 3rem;
+    background-color: #749DD6;
+    border-radius: 3rem;
+    margin: 0 1rem;
+    cursor: pointer;
     position: relative;
-    height: 14rem;
-    width: 14rem;
-    border-radius: 50%;
-    background: conic-gradient(teal 20deg, #eee 0deg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.progress::before{
-    content: "";
+.circle{
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    background-color: yellow;
     position: absolute;
-    height: 12rem;
-    width: 12rem;
-    border-radius: 50%;
-    background-color: #eee;
+    top: 6%;
+    left: 6%;
+    animation: switchOff .3s linear forwards;
 }
 
-.progress span{
-    position: relative;
-    font-size: 1.2rem;
+input:checked + label {
+    background-color:  #130a75;
+}
+
+input:checked + label .circle{
+    background-color: #ffcf96;
+    animation: switchOn .3s linear forwards;
+}
+
+@keyframes switchOn {
+    0%{
+        transform: translateX(0) scale(1)
+    }
+
+    50%{
+        transform: translateX(20px) scale(1.2);
+    }
+
+    100%{
+        transform: translateX(40px) scale(1)
+    }
+}
+
+@keyframes switchOff {
+    0%{
+        transform: translateX(40px) scale(1)
+    }
+
+    50%{
+        transform: translateX(20px) scale(1.2);
+    }
+
+    100%{
+        transform: translateX(0) scale(1)
+    }
 }
