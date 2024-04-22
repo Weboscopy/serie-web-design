@@ -3,34 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Onglets</title>
+    <title>Compteurs</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="./app.js" defer></script>
+    <script defer src="./app.js"></script>
 </head>
 <body>
-    <div class="container">
-        <div class="tabs">
-            <button class="tab active">HTML</button>
-            <button class="tab">CSS</button>
-            <button class="tab">JavaScript</button>
-            <button class="tab">Php</button>
-            <div class="line"></div>
-            <div class="line-full"></div>
-        </div>
-        <div class="content">
-            <div class="item active">
-                HTML signifie « HyperText Markup Language » qu'on peut traduire par « langage de balises pour l'hypertexte ». Il est utilisé afin de créer et de représenter le contenu d'une page web et sa structure. D'autres technologies sont utilisées avec HTML pour décrire la présentation d'une page (CSS) et/ou ses fonctionnalités interactives 
-            </div>
-            <div class="item">
-                CSS est l'un des langages principaux du Web ouvert et a été standardisé par le W3C. Ce standard évolue sous forme de niveaux (levels), CSS1 est désormais considéré comme obsolète, CSS2.1 correspond à la recommandation et CSS3, qui est découpé en modules plus petits, est en voie de standardisation
-            </div>
-            <div class="item">
-                JavaScript (souvent abrégé en « JS ») est un langage de script léger, orienté objet, principalement connu comme le langage de script des pages web. Mais il est aussi utilisé dans de nombreux environnements extérieurs aux navigateurs web tels que Node.js, Apache CouchDB voire Adobe Acrobat. Le code JavaScript est interprété ou compilé à la volée (JIT). C'est un langage à objets utilisant le concept de prototype, disposant d'un typage faible et dynamique qui permet de programmer suivant plusieurs paradigmes de programmation : fonctionnelle, impérative et orientée objet. Apprenez-en plus sur JavaScript.
-            </div>
-            <div class="item">
-                PHP est un langage de script côté serveur conçu pour le développement web mais aussi utilisé comme langage de programmation généraliste. Créée à l'origine par Rasmus Lerdorf en 1994, l'implémentation de la référence PHP est maintenant produite par The PHP Group. PHP signifiait à l'origine Personal Home Page, mais elle correspond maintenant à l'acronyme récursif PHP : Hypertext Preprocessor.
-            </div>
-        </div>
+  <div class="counter-box">
+    <img src="./youtube.svg">
+    <div class="counter" data-target="3700"></div>
+    <h3>Abonnés</h3>
+  </div>
+  <div class="counter-box">
+    <img src="./twitter.svg">
+      <div class="counter" data-target="9800"></div>
+      <h3>Followers</h3>
+    </div>
+    <div class="counter-box">
+      <img src="./linkedin.svg">
+      <div class="counter" data-target="500"></div>
+      <h3>Connections</h3>
+    </div>
+    <div class="counter-box">
+      <img src="./facebook.svg">
+      <div class="counter" data-target="8200"></div>
+      <h3>Fans</h3>
     </div>
 </body>
 </html>

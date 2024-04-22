@@ -6,88 +6,30 @@
 
 body{
     min-height: 100vh;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: #333;
+    color: deepskyblue;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.container{
-    width: 700px;
-    background-color: #444;
-    padding: 1rem 2rem;
+.counter-box{
+    padding: 3rem;
+    text-align: center;
 }
 
-.tabs{
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+img{
+    width: 7rem;
+    height: 7rem;
 }
 
-.tabs .tab{
-    background-color: transparent;
-    border: none;
-    outline: none;
-    color: #888;
-    font-size: 1.2rem;
-    padding: 1rem;
-    cursor: pointer;
+.counter{
+    font-size: 4rem;
 }
 
-.tabs .tab.active{
-    color: darkviolet;
-}
-
-.line-full{
-    position: absolute;
-    top: 3.6rem;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #eee;
-}
-
-.line{
-    position: absolute;
-    top: 3.5rem;
-    width: 5rem;
-    left: 0;
-    height: 5px;
-    background-color: darkviolet;
-    border-radius: 10px;
-    z-index: 2;
-    transition: all .3s ease-in-out;
-}
-
-.content{
-    padding: 1.2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #aaa;
-    min-height: 200px;
-}
-
-.item{
-    display: none;
-    animation: move .5s ease;
-}
-
-.item.active{
-    display: block;
-}
-
-@keyframes move {
-    0%{
-        transform: translateX(50px);
-        opacity: 0
-    }
-
-    100%{
-        transform: translateX(0);
-        opacity: 1
+@media (max-width: 768px){
+    body{
+        flex-direction: column;
     }
 }

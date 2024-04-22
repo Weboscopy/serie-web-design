@@ -1,21 +1,26 @@
-const tabs = document.querySelectorAll(".tab")
-const items = document.querySelectorAll(".item")
-const line = document.querySelector(".line")
+const counters = document.querySelectorAll(".counter")
+const speed = 300
+const start = 0 
 
 
-const app = () => {
-    tabs.forEach((tab, index) => {
-        tab.addEventListener("click", (e) => {
-            tabs.forEach(tab => tab.classList.remove("active"))
-            tab.classList.add("active")
+const initApp = () => {
+    counters.forEach(counter => {
+        const target = Number(counter.getAttribute("data-target"))
+        const increment = target / speed 
+        counter.innerText = start 
 
-            line.style.width = e.target.offsetWidth + "px"
-            line.style.left =  e.target.offsetLeft + "px"
+        function update(){
+            const current = Number(counter.innerText)
+            if(current < target){
+                counter.innerText = Math.ceil(current + increment)
+                setTimeout(update,1)
+            } else {
+                counter.innerText = target
+            }
+        }
 
-            items.forEach(item => item.classList.remove("active"))
-            items[index].classList.add("active")
-        })
+        update()
     })
 }
 
-document.addEventListener("DOMContentLoaded", app)
+document.addEventListener("DOMContentLoaded", initApp)
