@@ -1,26 +1,19 @@
-const counters = document.querySelectorAll(".counter")
-const speed = 300
-const start = 0 
+const card_top = document.querySelector(".top")
+const title = document.querySelector("h3")
+const desc = document.querySelector("p")
+
+const skeleton = document.querySelectorAll(".skeleton")
+const skeletonText = document.querySelectorAll(".skeleton-text")
 
 
-const initApp = () => {
-    counters.forEach(counter => {
-        const target = Number(counter.getAttribute("data-target"))
-        const increment = target / speed 
-        counter.innerText = start 
-
-        function update(){
-            const current = Number(counter.innerText)
-            if(current < target){
-                counter.innerText = Math.ceil(current + increment)
-                setTimeout(update,1)
-            } else {
-                counter.innerText = target
-            }
-        }
-
-        update()
-    })
+const app = () => {
+    setTimeout(() => {
+        skeleton.forEach(el => el.classList.remove("skeleton"))
+        skeletonText.forEach(el => el.classList.remove("skeleton-text"))
+        card_top.innerHTML = '<img src="./img.jpg" alt="© Isaac Quesada">'
+        title.innerText = "Yummy!"
+        desc.innerText = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus odio quis impedit provident. Earum, ducimus!'
+    }, 3000)
 }
 
-document.addEventListener("DOMContentLoaded", initApp)
+document.addEventListener("DOMContentLoaded", app)
