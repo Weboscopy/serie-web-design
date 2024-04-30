@@ -5,71 +5,96 @@
 }
 
 body{
-    min-height: 100vh;
-    background-color: mediumpurple;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: #333;
+    color: #FDF;
 }
 
-.card{
-    width: 400px;
-    background-color: khaki;
-    border-radius: .4rem;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+header{
+    position: relative;
+    background-color: #514c9c;
+    height: 100vh;
+    width: 100%;
     overflow: hidden;
 }
 
-.top{
-    height: 250px
+header h1{
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 4rem;
+    text-transform: uppercase;
+    text-align: center;
 }
 
-img{
+header .moon{
+    position: absolute;
+    bottom: 30%;
+    right: 30%;
+    width: 150px;
+    height: 150px;
+}
+
+header .stars{
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 120%;
+    position: absolute;
 }
 
-.bottom{
-    padding: 1rem;
+header .clouds{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    transform: rotate(180deg);
+    height: 20%;  
 }
 
-h3{
+section{
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 5rem;
+    text-align: center;
+}
+
+section h2{
     font-size: 2rem;
-    color: #333;
-    font-style: italic;
-    margin: 1rem;
+    margin-bottom: 1rem;
 }
 
-p{
-    margin: 1rem;
-    line-height: 1.6rem;
+section p{
+    font-size: 1.3rem;
+    line-height: 2.2rem;
 }
 
-.skeleton{
-    background-image: linear-gradient(to right, #eee 0%, #ddd 20%, #eee 100%);
-    background-size: 200%;
-    animation: skeleton 1.2s linear alternate infinite;
+.parallax{
+    position: relative;
+    min-height: 400px;
+    background-image: url("./images/dream.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
-.skeleton-text{
-    display: inline-block;
+.parallax .text{
+    position: absolute;
     width: 100%;
-    margin: 0;
-    height: .8rem;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    letter-spacing: 8px;
+    text-transform: uppercase;
 }
 
-.skeleton-text:last-child{
-    width: 70%;
-}
-
-@keyframes skeleton {
-    0%{
-        background-position: 50% 0;
-    }
-
-    100%{
-        background-position: -100% 0;
-    }
+.parallax .text .border{
+    background-color: #333;
+    padding: 20px;
 }

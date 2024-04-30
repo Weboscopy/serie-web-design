@@ -1,19 +1,15 @@
-const card_top = document.querySelector(".top")
-const title = document.querySelector("h3")
-const desc = document.querySelector("p")
+const h1 =  document.querySelector("h1")
+const moon =  document.querySelector(".moon")
+const stars =  document.querySelector(".stars")
 
-const skeleton = document.querySelectorAll(".skeleton")
-const skeletonText = document.querySelectorAll(".skeleton-text")
-
-
-const app = () => {
-    setTimeout(() => {
-        skeleton.forEach(el => el.classList.remove("skeleton"))
-        skeletonText.forEach(el => el.classList.remove("skeleton-text"))
-        card_top.innerHTML = '<img src="./img.jpg" alt="© Isaac Quesada">'
-        title.innerText = "Yummy!"
-        desc.innerText = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus odio quis impedit provident. Earum, ducimus!'
-    }, 3000)
+const initApp = () => {
+    window.addEventListener("scroll", () => {
+         let val = window.scrollY
+        moon.style.bottom = 30 - val * 0.1 + "%"
+        moon.style.right = 30 - val * 0.04 + "%"
+        stars.style.top =  val * 0.1 + "%"
+        h1.style.bottom = 50 - val * 0.1 + "%"
+    })
 }
 
-document.addEventListener("DOMContentLoaded", app)
+document.addEventListener("DOMContentLoaded", initApp)
