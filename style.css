@@ -76,7 +76,7 @@ body{
 .card .middle::after{
     bottom: 0;
     right: 0;
-    font-size: 3rem;
+    content: "\201D";
     transform: translate(-.2rem, .5rem)
 }
 
