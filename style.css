@@ -1,180 +1,84 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html{
-    scroll-behavior: smooth;
-}
-
-a{
-    text-decoration: none;
-    color: inherit;
-}
-
-a:hover{
-    opacity: 0.5;
-}
-
-h1{
-    font-weight: 500;
-    line-height: 2.25rem;
-    font-size: 1.875rem;
-}
-
-body{
-    min-height: 100vh;
-    background-color: #333;
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 header{
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background-color: dodgerblue;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-section#main-menu{
-    max-width: 56rem;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
+header > img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 20%;
 }
 
-section#main-menu>nav>*{
-    font-size: 1.25rem;
-    margin: 0 1.2rem
+.floating-div{
+  position: absolute;
+  height: 6rem;
+  width: 6rem;
+  box-shadow: 0px 19px 60px rgb(0 0 0 / 8%);
+  border-radius: 17px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media screen and (max-width: 768px) {
-    section#main-menu>nav{
-        display: none;
-    }
+.floating-div:nth-of-type(1){
+  top: 20%;
+  right: 20%;
 }
 
-/* buton hamburger */
-button{
-    height: 2rem;
-    width: 2rem;
-    background-color: transparent;
-    cursor: pointer;
-    border: none;
+.floating-div:nth-of-type(2){
+  top: 55%;
+  right: 30%;
 }
 
-@media screen and (min-width: 768px) {
-    button{
-        display: none;
-    }
+.floating-div:nth-of-type(3){
+  top: 25%;
+  left: 20%;
 }
 
-button > div{
-    position: relative;
-    height: 2px;
-    width: 100%;
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.4s ease-in-out;
+.floating-div > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-button>div::before,
-button>div::after
-{
-    content: "";
-    top: -10px;
-    position: absolute;
-    height: 2px;
-    width: 100%;
-    background-color: #fff;
+h1{
+  font-weight: bold;
+  font-size: 3rem;
+  background:  linear-gradient(45deg,  rgb(3, 80, 125) 0%, rgb(6, 143, 224) 40%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-button>div::after{
-    top: 10px;
+h2{
+  font-weight: 300;
+  font-size: 4rem;
+  min-height: 15%;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  background: linear-gradient(90deg, rgb(64, 170, 255) 0%, rgb(3, 122, 190) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.btn-active > div {
-    transform: rotate(135deg)
-}
-
-.btn-active > div::before,
-.btn-active > div::after{
-    top: 0;
-    transform: rotate(90deg);
-}
-
-/* menu mobile */
-section#mobile-menu{
+@media screen and (max-width: 768px){
+  .floating-div{
     display: none;
-    position: absolute;
-    top: 68px;
-    font-size: 3rem;
-    line-height: 1rem;
-    background-color: rgba(0,0,0,0.6);
-    width: 100%;
-    animation: open-menu 0.5s ease-in-out forwards;
-    transform-origin: top;
-}
-
-section#mobile-menu > nav {
-    min-height: calc(100vh - 68px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 2rem 0;
-}
-
-section#mobile-menu.mobile-active{
-    display: block;
-}
-
-@keyframes open-menu {
-    0%{
-        transform: scaleY(0);
-    }
-
-    80%{
-        transform: scaleY(1.2)
-    }
-
-    100%{
-        transform: scaleY(1)
-    }
-}
-
-main section{
-    width: 100%;
-    height: 100vh;
-    padding: 0 4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 1.2rem
-}
-
-section#home{
-    background: url("img1.jpg") no-repeat center center/cover;
-}
-
-section#products {
-    background: url('img2.jpg') no-repeat center center/cover;
-    ;
-}
-
-section#testimonies {
-    background: url('img3.jpg') no-repeat center center/cover;
-    ;
-}
-
-section#contact {
-    background: url('img4.jpg') no-repeat center center/cover;
-    ;
+  }
 }
