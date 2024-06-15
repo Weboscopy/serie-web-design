@@ -1,75 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expand / Collapse</title>
+    <title>Menu Responsive</title>
     <link rel="stylesheet" href="./style.css">
     <script defer src="./app.js"></script>
 </head>
+
 <body>
-    <h1>Cycle de vie d'un projet</h1>
-    <div class="container">
-        <div class="card card_active">
-            <h3 class="card__title">
-                01 - Formulation
-            </h3>
-            <p class="card__content">
-                Expression des besoins et des enjeux
-            </p>
-            <button class="card__toggler">
-                <img class="card__icon card__icon_chevron" src="./chevron.png" alt="bouton pour ouvrir">
-                <img class="card__icon card__icon_close" src="./close.png" alt="bouton pour fermer">
+    <header>
+        <section id="main-menu">
+            <h1>
+                <a href="#home">Mon super site</a>
+            </h1> 
+            <button>
+                <div></div>
             </button>
-        </div>
-        <div class="card">
-            <h3 class="card__title">
-                02 - Analyse
-            </h3>
-            <p class="card__content">
-                Etude de faisabilité, comparaison avec l'existant
-            </p>
-            <button class="card__toggler">
-                <img class="card__icon card__icon_chevron" src="./chevron.png" alt="bouton pour ouvrir">
-                <img class="card__icon card__icon_close" src="./close.png" alt="bouton pour">
-            </button>
-        </div>
-        <div class="card">
-            <h3 class="card__title">
-                03 - Décision
-            </h3>
-            <p class="card__content">
-                Rédaction du cahier des charges
-            </p>
-            <button class="card__toggler">
-                <img class="card__icon card__icon_chevron" src="./chevron.png" alt="bouton pour ouvrir">
-                <img class="card__icon card__icon_close" src="./close.png" alt="bouton pour">
-            </button>
-        </div>
-        <div class="card">
-            <h3 class="card__title">
-                04 - Conception
-            </h3>
-            <p class="card__content">
-                Réalisation des objectifs fixés
-            </p>
-            <button class="card__toggler">
-                <img class="card__icon card__icon_chevron" src="./chevron.png" alt="bouton pour ouvrir">
-                <img class="card__icon card__icon_close" src="./close.png" alt="bouton pour">
-            </button>
-        </div>
-        <div class="card">
-            <h3 class="card__title">
-                05 - Evaluation
-            </h3>
-            <p class="card__content">
-                Retour sur le livrable
-            </p>
-            <button class="card__toggler">
-                <img class="card__icon card__icon_chevron" src="./chevron.png" alt="bouton pour ouvrir">
-                <img class="card__icon card__icon_close" src="./close.png" alt="bouton pour">
-            </button>
-        </div>
-    </div>
+            <nav>
+                <a href="#products">Mes produits</a>
+                <a href="#testimonies">Témoignages</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </section>
+        <section id="mobile-menu">
+            <nav>
+                <a href="#home">Accueil</a>
+                <a href="#products">Mes produits</a>
+                <a href="#testimonies">Témoignages</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </section>
+    </header>
+    <main>
+        <section id="home">
+            <h1>Accueil</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit maxime tempora molestias mollitia, officiis
+                voluptate corporis id ipsa asperiores, perspiciatis ipsum voluptatibus, laborum reprehenderit laboriosam
+                sed repudiandae ab impedit alias?</p>
+        </section>
+        <section id="products">
+            <h1>Produits</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae libero nostrum veritatis iure iste,
+                soluta iusto ea saepe nemo at quos ducimus non sit sequi consectetur odit velit quo neque inventore
+                placeat, ipsam repellendus ut expedita corporis! Vero, suscipit necessitatibus.</p>
+        </section>
+        <section id="testimonies">
+            <h1>Témoignages</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae libero nostrum veritatis iure iste,
+                soluta iusto ea saepe nemo at quos ducimus non sit sequi consectetur odit velit quo neque inventore
+                placeat, ipsam repellendus ut expedita corporis! Vero, suscipit necessitatibus.</p>
+        </section>
+        <section id="contact">
+            <h1>Contact</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae libero nostrum veritatis iure iste,
+                soluta iusto ea saepe nemo at quos ducimus non sit sequi consectetur odit velit quo neque inventore
+                placeat, ipsam repellendus ut expedita corporis! Vero, suscipit necessitatibus.</p>
+        </section>
+    </main>
 </body>
 </html>

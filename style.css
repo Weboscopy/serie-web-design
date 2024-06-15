@@ -1,89 +1,180 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    background-color: #555;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+html{
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover{
+    opacity: 0.5;
 }
 
 h1{
-    color: #fff;
-    text-align: center;
-    margin-top: 2rem;
-    margin-bottom: 4rem;
+    font-weight: 500;
+    line-height: 2.25rem;
+    font-size: 1.875rem;
 }
 
-.container{
-    max-width: 430px;
+body{
+    min-height: 100vh;
+    background-color: #333;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: dodgerblue;
+}
+
+section#main-menu{
+    max-width: 56rem;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
 }
 
-.card{
+section#main-menu>nav>*{
+    font-size: 1.25rem;
+    margin: 0 1.2rem
+}
+
+@media screen and (max-width: 768px) {
+    section#main-menu>nav{
+        display: none;
+    }
+}
+
+/* buton hamburger */
+button{
+    height: 2rem;
+    width: 2rem;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+@media screen and (min-width: 768px) {
+    button{
+        display: none;
+    }
+}
+
+button > div{
     position: relative;
-    background-color: #fff;
-    border: 1px solid black;
-    margin: 1.2rem 0;
-    padding: 1.5rem;
-    border-radius: .6rem;
-    transition: all 0.3s ease;
-}
-
-.card__title{
-    margin: .4rem;
-    font-size: 1.4rem;
-}
-
-.card__content{
-    display : none;
-    margin: 1rem 0 0;
-    font-size: 1.1rem;
-}
-
-.card__toggler{
-   width: 1.8rem;
-   height: 1.8rem;
-   position: absolute; 
-   top: 1.9rem;
-   right: 1.9rem;
-   cursor: pointer;
-   border-radius: 50%;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background-color: transparent;
-   border: 0;
-}
-
-.card__icon{
+    height: 2px;
     width: 100%;
-    height: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease-in-out;
 }
 
-.card__icon_close{
+button>div::before,
+button>div::after
+{
+    content: "";
+    top: -10px;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+}
+
+button>div::after{
+    top: 10px;
+}
+
+.btn-active > div {
+    transform: rotate(135deg)
+}
+
+.btn-active > div::before,
+.btn-active > div::after{
+    top: 0;
+    transform: rotate(90deg);
+}
+
+/* menu mobile */
+section#mobile-menu{
     display: none;
+    position: absolute;
+    top: 68px;
+    font-size: 3rem;
+    line-height: 1rem;
+    background-color: rgba(0,0,0,0.6);
+    width: 100%;
+    animation: open-menu 0.5s ease-in-out forwards;
+    transform-origin: top;
 }
 
-.card_active{
-    background-color: antiquewhite;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+section#mobile-menu > nav {
+    min-height: calc(100vh - 68px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2rem 0;
 }
 
-.card_active .card__content{
+section#mobile-menu.mobile-active{
     display: block;
 }
 
-.card_active .card__icon_chevron{
-    display : none
+@keyframes open-menu {
+    0%{
+        transform: scaleY(0);
+    }
+
+    80%{
+        transform: scaleY(1.2)
+    }
+
+    100%{
+        transform: scaleY(1)
+    }
 }
 
-.card_active .card__icon_close{
-    display: block;
+main section{
+    width: 100%;
+    height: 100vh;
+    padding: 0 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2rem
 }
 
-.card_active .card__toggler{
-    background-color: bisque;
-    border: 1px solid black;
+section#home{
+    background: url("img1.jpg") no-repeat center center/cover;
+}
+
+section#products {
+    background: url('img2.jpg') no-repeat center center/cover;
+    ;
+}
+
+section#testimonies {
+    background: url('img3.jpg') no-repeat center center/cover;
+    ;
+}
+
+section#contact {
+    background: url('img4.jpg') no-repeat center center/cover;
+    ;
 }
