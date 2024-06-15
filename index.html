@@ -3,13 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox Cards</title>
+    <title>Expand / Collapse</title>
     <link rel="stylesheet" href="./style.css">
     <script defer src="./app.js"></script>
 </head>
 <body>
-    <div id="container">
-
+    <h1>Cycle de vie d'un projet</h1>
+    <div class="container">
+        <div class="card card_active">
+            <h3 class="card__title">
+                01 - Formulation
+            </h3>
+            <p class="card__content">
+                Expression des besoins et des enjeux
+            </p>
+            <button class="card__toggler">
+                <img class="card__icon card__icon_chevron" src="./chevron.png" alt="bouton pour ouvrir">
+                <img class="card__icon card__icon_close" src="./close.png" alt="bouton pour fermer">
+            </button>
+        </div>
+        <div class="card">
+            <h3 class="card__title">
+                02 - Analyse
+            </h3>
+            <p class="card__content">
+                Etude de faisabilité, comparaison avec l'existant
+            </p>
+            <button class="card__toggler">
+                <img class="card__icon card__icon_chevron" src="./chevron.png" alt="bouton pour ouvrir">
+                <img class="card__icon card__icon_close" src="./close.png" alt="bouton pour">
+            </button>
+        </div>
+        <div class="card">
+            <h3 class="card__title">
+                03 - Décision
+            </h3>
+            <p class="card__content">
+                Rédaction du cahier des charges
+            </p>
+            <button class="card__toggler">
+                <img class="card__icon card__icon_chevron" src="./chevron.png" alt="bouton pour ouvrir">
+                <img class="card__icon card__icon_close" src="./close.png" alt="bouton pour">
+            </button>
+        </div>
+        <div class="card">
+            <h3 class="card__title">
+                04 - Conception
+            </h3>
+            <p class="card__content">
+                Réalisation des objectifs fixés
+            </p>
+            <button class="card__toggler">
+                <img class="card__icon card__icon_chevron" src="./chevron.png" alt="bouton pour ouvrir">
+                <img class="card__icon card__icon_close" src="./close.png" alt="bouton pour">
+            </button>
+        </div>
+        <div class="card">
+            <h3 class="card__title">
+                05 - Evaluation
+            </h3>
+            <p class="card__content">
+                Retour sur le livrable
+            </p>
+            <button class="card__toggler">
+                <img class="card__icon card__icon_chevron" src="./chevron.png" alt="bouton pour ouvrir">
+                <img class="card__icon card__icon_close" src="./close.png" alt="bouton pour">
+            </button>
+        </div>
     </div>
 </body>
 </html>
