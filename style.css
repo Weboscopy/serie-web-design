@@ -7,78 +7,69 @@
 body {
     min-height: 100vh;
     background-color: #333;
-    color: #fff;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 
 .container {
-    text-align: center;
+    width: 500px;
+    background: #888;
+    border-radius: 10px;
+    padding: 1rem 2rem;
 }
 
+h2 {
+    margin-bottom: 1rem;
+}
 
-.steps-container {
-    position: relative;
+.fa-heart {
+    color: cornflowerblue;
+}
+
+ul {
     display: flex;
-    justify-content: space-between;
-    width: 470px;
-    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    background-color: white;
+    border: 1px solid #888;
+    border-radius: 5px;
+    padding: .7rem .2rem;
+    margin: 1rem 0;
+    overflow: hidden;
 }
 
-.steps-container:before {
-    content: "";
-    background-color: #bbb;
-    height: 4px;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    transform: translateY(-50%);
-    z-index: -1;
-}
-
-.progressBar {
-    background-color: darkorchid;
-    height: 4px;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 0;
-    transform: translateY(-50%);
-    z-index: -1;
-    transition: all 0.4s ease;
-}
-
-.step {
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
-    border: 3px solid #bbb;
-    background-color: #333;
+ul li {
+    background-color: cornflowerblue;
+    padding: .2rem;
+    margin: .2rem;
+    border-radius: 0.4rem;
+    list-style-type: none;
     display: flex;
     align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease-in-out;
+    gap: 1rem;
 }
 
-.step.active {
-    border-color: darkorchid;
-}
-
-button {
-    background-color: darkorchid;
-    border: 0;
-    border-radius: .2rem;
-    font-size: 1rem;
-    color: inherit;
+ul li i {
+    background-color: white;
+    color: cornflowerblue;
     cursor: pointer;
-    padding: .6rem .9rem;
-    margin-right: 1rem;
+    padding: .1rem .2rem;
+    border-radius: 50%;
+    font-size: .7rem;
 }
 
-button:disabled {
-    background-color: #bbb;
-    cursor: not-allowed;
+ul input {
+    border: none;
+    outline: none;
+    padding: .3rem;
+    max-width: 6rem;
+}
+
+.counter {
+    margin-top: 1rem;
+    font-size: .7rem;
+    display: flex;
+    justify-content: flex-end;
 }
