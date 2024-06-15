@@ -1,41 +1,43 @@
+const progressBar = document.querySelector(".progressBar")
+const next = document.getElementById("next")
+const prev = document.getElementById("prev")
+const steps = document.querySelectorAll(".step")
 
-const notifCol = document.querySelector(".notif_col")
-const btn = document.querySelector(".btn")
-const types = ["info", "success", "danger"]
+const app = {
+    current: 1,
+    init() {
+        next.addEventListener("click", () => {
+            if (app.current < steps.length) {
+                app.current++
+                app.update()
+            }
+        })
 
+        prev.addEventListener("click", () => {
+            if (app.current > 1) {
+                app.current--
+                app.update()
+            }
+        })
+    },
+    update() {
+        steps.forEach((step, index) => {
+            (index < app.current) ? step.classList.add("active") : step.classList.remove("active")
 
-const app = () => {
-    btn.addEventListener("click", () => createNotif(getRandomType()))
+            const actives = document.querySelectorAll(".active")
 
-    function createNotif(type) {
-        const notif = document.createElement("div")
-        notif.className = `notif ${type}`
-        const border = document.createElement("div")
-        border.className = "border"
-        let message = ""
-        switch (type) {
-            case "info":
-                message = "ǃ Un document a été ajouté"
-                break;
-            case "success":
-                message = "✓ La demande a été envoyée"
-                break;
-            case "danger":
-                message = "✖ Une erreur est survenue"
-        }
+            progressBar.style.width = (actives.length - 1) / (steps.length - 1) * 100 + "%"
 
-        notif.innerText = message
-        notif.appendChild(border)
-        notifCol.appendChild(notif)
-
-        setTimeout(() => {
-            notif.remove()
-        }, 4000)
-    }
-
-    function getRandomType() {
-        return types[Math.floor(Math.random() * types.length)]
+            if (app.current == 1) {
+                prev.disabled = true
+            } else if (app.current == steps.length) {
+                next.disabled = true
+            } else {
+                prev.disabled = false
+                next.disabled = false
+            }
+        })
     }
 }
 
-document.addEventListener("DOMContentLoaded", app)
+document.addEventListener("DOMContentLoaded", app.init)
