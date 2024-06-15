@@ -1,15 +1,14 @@
-const h1 =  document.querySelector("h1")
-const moon =  document.querySelector(".moon")
-const stars =  document.querySelector(".stars")
+const hamburger = document.querySelector(".hamburger")
+const nav = document.querySelector("nav")
 
-const initApp = () => {
-    window.addEventListener("scroll", () => {
-         let val = window.scrollY
-        moon.style.bottom = 30 - val * 0.1 + "%"
-        moon.style.right = 30 - val * 0.04 + "%"
-        stars.style.top =  val * 0.1 + "%"
-        h1.style.bottom = 50 - val * 0.1 + "%"
-    })
+const app = () => {
+
+    const toggleMenu = () => {
+        hamburger.classList.toggle("active")
+        nav.classList.toggle("mobile")
+    }
+
+    hamburger.addEventListener("click", toggleMenu)
 }
 
-document.addEventListener("DOMContentLoaded", initApp)
+document.addEventListener("DOMContentLoaded", app)

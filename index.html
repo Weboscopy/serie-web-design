@@ -3,35 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parallax</title>
+    <title>Sous-menus</title>
     <link rel="stylesheet" href="./style.css">
     <script src="./app.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Journal d'un somnambule <em>🚀</em></h1>
-        <img src="./images/moon.png" class="moon" alt="lune">
-        <img src="./images/stars.png" class="stars" alt="étoiles">
-        <img src="./images/vector.svg" class="clouds" alt="nuages">
-    </header>
-    <section>
-        <h2>Mes plus beaux rêves</h2>
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit repellendus minus officiis tenetur iure, vero blanditiis quod molestiae adipisci dolorum accusamus! Quae et placeat, facilis eligendi, magnam commodi ullam, eum officiis dolorem repellat laboriosam quis facere quibusdam voluptate error laudantium iste ducimus? Numquam libero expedita, commodi sed quasi officia consectetur dignissimos assumenda suscipit repudiandae, fugit iure dolorem molestiae vero necessitatibus enim exercitationem totam quisquam, repellat aspernatur. Incidunt nihil, tempore ut inventore nobis perferendis esse nam ratione! Praesentium ipsa blanditiis quibusdam maxime molestiae nostrum molestias quis a animi autem libero iure doloremque, soluta fuga dolorem quasi placeat sequi, eos beatae veritatis!
-        </p>
-    </section>
-    <div class="parallax">
-        <div class="text">
-            <span class="border">
-                Onirisme
-            </span>
+<header>
+    <a href="#" class="logo">Mon site 🚀</a>
+    <button class="hamburger">
+        <div>
+            
         </div>
-    </div>
-    <section>
-        <h2>Mes pires cauchemars</h2>
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit repellendus minus officiis tenetur iure, vero blanditiis quod molestiae adipisci dolorum accusamus! Quae et placeat, facilis eligendi, magnam commodi ullam, eum officiis dolorem repellat laboriosam quis facere quibusdam voluptate error laudantium iste ducimus? Numquam libero expedita, commodi sed quasi officia consectetur dignissimos assumenda suscipit repudiandae, fugit iure dolorem molestiae vero necessitatibus enim exercitationem totam quisquam, repellat aspernatur. Incidunt nihil, tempore ut inventore nobis perferendis esse nam ratione! Praesentium ipsa blanditiis quibusdam maxime molestiae nostrum molestias quis a animi autem libero iure doloremque, soluta fuga dolorem quasi placeat sequi, eos beatae veritatis!
-        </p>
-    </section>
+    </button>
+    <nav>
+        <ul>
+            <li>
+                <a href="#">Frontend</a>
+                <ul>
+                    <li><a href="#">React</a></li>
+                    <li><a href="#">Angular</a></li>
+                    <li><a href="#">Vue</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Backend</a>
+                <ul>
+                    <li><a href="#">Go</a></li>
+                    <li>
+                        <a href="#">Python</a>
+                        <ul>
+                            <li><a href="#">Flask</a></li>
+                            <li><a href="#">Django</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Node</a>
+                        <ul>
+                            <li><a href="#">Express</a></li>
+                            <li><a href="#">Nest</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Php</a>
+                        <ul>
+                            <li><a href="#">Laravel</a></li>
+                            <li><a href="#">Symfony</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
 </body>
 </html>
