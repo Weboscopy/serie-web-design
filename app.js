@@ -1,41 +1,41 @@
-const el = document.querySelector("h2")
 
-const words = JSON.parse(el.getAttribute("data-words"))
+const notifCol = document.querySelector(".notif_col")
+const btn = document.querySelector(".btn")
+const types = ["info", "success", "danger"]
 
-const app = {
-    txt: "",
-    wordIndex: 0,
-    isDeleting: false,
-    speed: 500,
-    init(){
-        const currentIndex = app.wordIndex % words.length 
-        const word = words[currentIndex]
 
-        if(app.isDeleting){
-          app.txt = word.substring(0, app.txt.length - 1)
-        } else {
-           app.txt = word.substring(0, app.txt.length + 1)
+const app = () => {
+    btn.addEventListener("click", () => createNotif(getRandomType()))
+
+    function createNotif(type) {
+        const notif = document.createElement("div")
+        notif.className = `notif ${type}`
+        const border = document.createElement("div")
+        border.className = "border"
+        let message = ""
+        switch (type) {
+            case "info":
+                message = "ǃ Un document a été ajouté"
+                break;
+            case "success":
+                message = "✓ La demande a été envoyée"
+                break;
+            case "danger":
+                message = "✖ Une erreur est survenue"
         }
 
-        el.innerText = app.txt
+        notif.innerText = message
+        notif.appendChild(border)
+        notifCol.appendChild(notif)
 
-        if(app.isDeleting){
-            app.speed /= 2
-        }
+        setTimeout(() => {
+            notif.remove()
+        }, 4000)
+    }
 
-        if(!app.isDeleting && app.txt === word){
-            app.speed = 3000 
-            app.isDeleting = true 
-        } else if(app.isDeleting && app.txt === "") {
-            app.isDeleting = false 
-            app.wordIndex++
-            app.speed = 500
-        }
-
-        setTimeout(() => app.init(), app.speed)
+    function getRandomType() {
+        return types[Math.floor(Math.random() * types.length)]
     }
 }
 
-
-document.addEventListener("DOMContentLoaded", app.init)
-
+document.addEventListener("DOMContentLoaded", app)
