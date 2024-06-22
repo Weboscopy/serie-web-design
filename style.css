@@ -7,7 +7,7 @@
 body {
     min-height: 100vh;
     background-color: #333;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,61 +15,60 @@ body {
 
 
 .container {
-    width: 500px;
-    background: #888;
-    border-radius: 10px;
+    background-color: white;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
     padding: 1rem 2rem;
 }
 
-h2 {
-    margin-bottom: 1rem;
+h4 {
+    color: #aaa;
+    font-size: 1.4rem;
 }
 
-.fa-heart {
-    color: cornflowerblue;
-}
-
-ul {
+form {
     display: flex;
-    flex-wrap: wrap;
-    background-color: white;
-    border: 1px solid #888;
-    border-radius: 5px;
-    padding: .7rem .2rem;
-    margin: 1rem 0;
-    overflow: hidden;
+    gap: 1.2rem;
 }
 
-ul li {
-    background-color: cornflowerblue;
-    padding: .2rem;
-    margin: .2rem;
-    border-radius: 0.4rem;
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+input {
+    width: 80px;
+    height: 80px;
+    border-radius: .4rem;
+    border: 1px solid #ddd;
+    font-size: 2rem;
+    text-align: center;
+    -moz-appearance: textfield;
 }
 
-ul li i {
-    background-color: white;
-    color: cornflowerblue;
-    cursor: pointer;
-    padding: .1rem .2rem;
-    border-radius: 50%;
-    font-size: .7rem;
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    display: none;
 }
 
-ul input {
+button {
+    background-color: teal;
+    color: white;
     border: none;
-    outline: none;
-    padding: .3rem;
-    max-width: 6rem;
+    cursor: pointer;
+    border-radius: .7rem;
+    font-size: 1.3rem;
+    padding: 1rem 2rem;
 }
 
-.counter {
-    margin-top: 1rem;
-    font-size: .7rem;
-    display: flex;
-    justify-content: flex-end;
+
+p {
+    font-size: 2rem;
+}
+
+
+p.success {
+    color: teal;
+}
+
+p.error {
+    color: tomato;
 }

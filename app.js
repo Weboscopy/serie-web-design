@@ -1,54 +1,45 @@
-const ul = document.querySelector("ul")
-const input = document.querySelector("input")
-const counter = document.querySelector("span")
+const inputs = document.querySelectorAll("input")
+const button = document.querySelector("button")
+const container = document.querySelector(".container")
 
-
-const maxTags = 10
-let tags = []
+let code = []
+const correct_code = [2, 4, 6, 8]
 
 const app = {
-    init() {
-        input.addEventListener("keyup", app.addTag)
-        ul.addEventListener("click", app.removeTag)
-        app.countTags()
-    },
-    addTag(e) {
-        if (e.key == "Enter" || e.key == ",") {
-            let tag = e.target.value.replace(",", "").replace(/\s+/g, " ")
-
-            if (tag.length > 10) {
-                tag = tag.substring(0, 10) + "..."
-            }
-
-            if (tag.length > 3 && !tags.includes(tag)) {
-                if (tags.length < maxTags) {
-                    tags.push(tag)
-                    app.displayDOMTags()
-                }
-            }
-
-            e.target.value = ""
-            input.focus()
+  init() {
+    button.addEventListener("click", app.verify)
+    inputs[0].focus()
+    inputs.forEach((input, index) => {
+      input.addEventListener("keydown", (e) => {
+        if (e.key >= 0 && e.key <= 9) {
+          code[index] = Number(e.key)
+          inputs[index].value = ""
+          setTimeout(() => app.focusInput(inputs[index + 1]), 10)
+        } else if (e.key === "Backspace") {
+          code.splice(index, 1)
+          setTimeout(() => app.focusInput(inputs[index - 1]), 10)
         }
-    },
-    displayDOMTags() {
-        ul.querySelectorAll("li").forEach(li => li.remove())
-        tags.forEach(tag => {
-            const li = `<li>${tag} <i class="fa fa-times"></i></li>`
-            input.insertAdjacentHTML("beforebegin", li)
-        })
-        app.countTags()
-    },
-    removeTag(e) {
-        if (e.target.tagName === "I") {
-            tags = tags.filter(item => item !== e.target.parentElement.innerText)
-            app.displayDOMTags()
-        }
-    },
-    countTags() {
-        counter.innerText = maxTags - tags.length
+      })
+    })
+  },
+  focusInput(input) {
+    if (input) {
+      input.focus()
     }
-}
+  },
+  verify() {
+    const p = document.createElement("p")
+    if (code.length == inputs.length && code.every((v, i) => v == correct_code[i])) {
+      p.innerText = "Code valide"
+      p.classList.add("success")
+    } else {
+      p.innerText = "Code invalide"
+      p.classList.add("error")
+    }
 
+    container.appendChild(p)
+    setTimeout(() => p.remove(), 2000)
+  }
+}
 
 document.addEventListener("DOMContentLoaded", app.init)

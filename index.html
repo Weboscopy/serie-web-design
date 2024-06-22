@@ -4,28 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tags</title>
+    <title>Code de vérification</title>
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="./app.js" defer></script>
 </head>
 
 <body>
     <div class="container">
-        <h2><i class="fa fa-heart"></i> Vos Passions</h2>
-        <p>Renseignez ici vos centres d'intérêts...</p>
-        <div>
-            <ul>
-                <input type="text">
-            </ul>
-        </div>
-        <div class="counter">
-            <p>Vous pouvez encore renseigner <span></span> items</p>
-        </div>
+        <img src="./shield.svg" alt="shield">
+        <h4>Entrer votre code d'accès</h4>
+        <form action="#">
+            <input type="number" placeholder="0" min="0" max="9" required>
+            <input type="number" placeholder="0" min="0" max="9" required>
+            <input type="number" placeholder="0" min="0" max="9" required>
+            <input type="number" placeholder="0" min="0" max="9" required>
+        </form>
+        <button>Vérifier</button>
     </div>
-
 </body>
 
 </html>
