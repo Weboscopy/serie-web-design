@@ -4,53 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire à étapes</title>
+    <title>Validation instantannée</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="./app.js" defer></script>
+    <script defer src="./app.js"></script>
 </head>
 
 <body>
-    <div class="container">
-        <ul>
-            <li class="active">étape 1</li>
-            <li>étape 2</li>
-            <li>étape 3</li>
-        </ul>
-        <form id="form1">
-            <h3>Créer votre compte</h3>
-            <input type="text" placeholder="Nom d'utilisateur">
-            <input type="text" placeholder="Prénom">
-            <input type="text" placeholder="Nom">
-            <div class="btns">
-                <button type="button" class="next">Suivant</button>
-            </div>
-        </form>
-        <form id="form2">
-            <h3>Vos identifiants</h3>
-            <input type="email" placeholder="E-mail">
-            <input type="password" placeholder="Password">
-            <input type="password" placeholder="Confirm password">
-            <div class="btns">
-                <button type="button" class="prev">Retour</button>
-                <button type="button" class="next">Suivant</button>
-            </div>
-        </form>
-        <form id="form3">
-            <h3>Compléter votre profil</h3>
-            <input type="text" placeholder="Téléphone">
-            <input type="text" placeholder="Adresse">
-            <input type="text" placeholder="Code postal">
-
-            <div class="btns">
-                <button type="button" class="prev">Retour</button>
-                <button type="button" class="next">Terminé</button>
-            </div>
-        </form>
-        <form id="form4">
-            <h3>Votre profil a bien été créé</h3>
-            <img src="./check-circle.svg" alt="">
-        </form>
-    </div>
+    <form>
+        <h1>Inscription</h1>
+        <h2>Inscription validée !</h2>
+        <div class="form-group">
+            <input type="text" id="username" name="username" placeholder="Nom d'utilisateur" autocomplete="off">
+            <p>Le nom d'utilisateur doit contenir entre 6 et 12 caractères</p>
+        </div>
+        <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="E-mail" autocomplete="off">
+            <p>L'adresse e-mail doit être valide, ex : nom@domaine.com</p>
+        </div>
+        <div class="form-group">
+            <input type="password" id="password" name="password" placeholder="Mot de passe" autocomplete="off">
+            <p>Mot de passe alphanumérique, entre 8 et 20 charactères et peut comprendre les caractères spéciaux
+                (_,-,&,)</p>
+        </div>
+        <div class="form-group">
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirmer le mot de passe"
+                autocomplete="off">
+            <p>Les mots de passe doivent être identiques</p>
+        </div>
+        <div class="form-group">
+            <input type="text" name="phone" placeholder="Numéro de téléphone" autocomplete="">
+            <p>Le téléphone doit contenir, ex: 0620304050 ou +33620304050 </p>
+        </div>
+        <button type="submit" disabled>
+            S'inscrire
+        </button>
+    </form>
 </body>
 
 </html>
