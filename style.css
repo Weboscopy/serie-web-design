@@ -6,43 +6,117 @@
 
 body {
     min-height: 100vh;
-    background-color: cornflowerblue;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#left,
-#right {
-    width: 30rem;
-    min-height: 30rem;
-    margin: 2rem;
-    background-color: #eee;
+.container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 1rem;
+    overflow: hidden;
 }
 
-#left.hovered,
-#right.hovered {
-    background-color: #888;
-    border: 3px white dashed;
+ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+li {
+    list-style: none;
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+}
+
+li.active {
+    background-color: dodgerblue;
+    color: white;
+}
+
+form {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    transform: translate(0);
+    transition: transform .5s ease-in;
 }
 
 h3 {
-    margin: 1rem;
+    text-align: center;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
 }
 
-.item {
-    background-color: #fff;
-    font-size: 1.5rem;
-    height: 3rem;
-    border-radius: 10px;
-    margin: 2rem;
+form input {
+    padding: .7rem .3rem;
+    margin: .3rem 0;
+    border: none;
+    border-bottom: 2px solid dodgerblue;
+    outline: none;
+    background-color: transparent;
+    font-size: 1.2rem;
+}
+
+.btns {
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: grab;
+    justify-content: space-around;
+    margin-top: 2rem;
 }
 
-.item.hold {
-    box-shadow: 0px 0px 15px -8px black;
+button {
+    width: 6rem;
+    height: 3rem;
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 2rem;
+    margin: 0 .7rem;
+    border: none;
+    outline: none;
+    cursor: pointer
+}
+
+#form2 {
+    left: 100%;
+}
+
+#form3 {
+    left: 200%;
+}
+
+#form4 {
+    left: 300%;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+}
+
+h2 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    background-color: dodgerblue;
+    color: white;
+    flex: 1;
+    padding: 1rem;
+    text-align: center;
+    font-weight: normal;
+}
+
+#form4>img {
+    width: 72px;
+    height: 72px;
 }

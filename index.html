@@ -4,22 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drag N Drop</title>
+    <title>Formulaire à étapes</title>
     <link rel="stylesheet" href="./style.css">
-    <script defer src="./app.js"></script>
+    <script src="./app.js" defer></script>
 </head>
 
 <body>
-    <div id="left">
-        <h3>En cours</h3>
-        <div class="item" draggable="true">Apprendre JavaScript</div>
-        <div class="item" draggable="true">Apprendre Python</div>
-        <div class="item" draggable="true">Apprendre Go</div>
-        <div class="item" draggable="true">Apprendre C#</div>
-        <div class="item" draggable="true">Apprendre Php</div>
-    </div>
-    <div id="right">
-        <h3>Terminé</h3>
+    <div class="container">
+        <ul>
+            <li class="active">étape 1</li>
+            <li>étape 2</li>
+            <li>étape 3</li>
+        </ul>
+        <form id="form1">
+            <h3>Créer votre compte</h3>
+            <input type="text" placeholder="Nom d'utilisateur">
+            <input type="text" placeholder="Prénom">
+            <input type="text" placeholder="Nom">
+            <div class="btns">
+                <button type="button" class="next">Suivant</button>
+            </div>
+        </form>
+        <form id="form2">
+            <h3>Vos identifiants</h3>
+            <input type="email" placeholder="E-mail">
+            <input type="password" placeholder="Password">
+            <input type="password" placeholder="Confirm password">
+            <div class="btns">
+                <button type="button" class="prev">Retour</button>
+                <button type="button" class="next">Suivant</button>
+            </div>
+        </form>
+        <form id="form3">
+            <h3>Compléter votre profil</h3>
+            <input type="text" placeholder="Téléphone">
+            <input type="text" placeholder="Adresse">
+            <input type="text" placeholder="Code postal">
+
+            <div class="btns">
+                <button type="button" class="prev">Retour</button>
+                <button type="button" class="next">Terminé</button>
+            </div>
+        </form>
+        <form id="form4">
+            <h3>Votre profil a bien été créé</h3>
+            <img src="./check-circle.svg" alt="">
+        </form>
     </div>
 </body>
 
