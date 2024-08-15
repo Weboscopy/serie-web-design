@@ -5,97 +5,100 @@
 }
 
 body {
-    background-color: wheat;
+    background-color: #333;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #fff;
 }
 
-#container {
-    width: 95vw;
-    margin: 2rem auto;
+.container {
     display: flex;
-    justify-content: center;
-    gap: 3rem;
+    padding: 2rem;
+}
+
+.list {
+    flex: 4;
+    display: flex;
+    gap: 2rem;
     flex-wrap: wrap;
 }
 
-.card {
-    transform: rotate(-1deg);
-    transition: all 0.3s ease;
-}
 
-
-.card:hover {
-    transform: rotate(3deg) scale(1.04);
-}
-
-.featured {
+.item {
+    width: 15rem;
     height: 17rem;
+    background-color: #fff;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
-.featured img {
+img {
     width: 100%;
-    height: 100%;
+    max-height: 10rem;
     object-fit: cover;
 }
 
-.details {
-    background: white;
-    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
-    position: relative;
-    top: -40px;
-    left: -10px;
+
+.name,
+.price,
+.type {
+    padding-left: 1rem;
 }
 
 
-.info {
-    padding: 1rem;
+.name {
+    font-size: 1.2rem;
 }
 
-.info h4 {
-    margin: 4px;
+.price {
+    font-weight: bold;
+}
+
+.type {
     text-transform: uppercase;
 }
 
-.info p {
-    color: #555;
-    margin: 5px 0;
+
+.menu {
+    flex: 1;
+}
+
+h1 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: deepskyblue;
+    font-weight: 300;
+    letter-spacing: .5rem;
+    text-transform: uppercase;
 }
 
 
-.rating {
-    margin-top: 5px;
+h1+* {
+    margin-bottom: 3rem;
+    margin-left: .4rem;
+}
+
+
+input[type=text] {
+    outline: none;
+    padding: .8rem;
+    font-size: 1rem;
+    color: dodgerblue;
+    border: 2px solid deepskyblue;
+}
+
+.categories {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.stars {
-    background-color: darkmagenta;
-    padding: .5rem 1rem;
-    display: flex;
-    gap: .4rem;
-    flex-direction: row-reverse;
-}
-
-.stars span {
+.category {
     cursor: pointer;
-    color: #999;
-    font-size: 2rem;
-    transition: all .2s ease;
 }
 
-.stars span:hover {
-    color: khaki;
-}
-
-.stars span:hover~span {
-    color: khaki;
-}
-
-
-.stars span[data-selected] {
-    color: khaki;
-}
-
-.stars span[data-selected]~span {
-    color: khaki;
+.category.active {
+    color: dodgerblue;
 }

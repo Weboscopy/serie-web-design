@@ -4,14 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notation</title>
+    <title>Filtres</title>
     <link rel="stylesheet" href="./style.css">
     <script defer src="./app.js"></script>
 </head>
 
 <body>
+    <div class="container">
+        <div class="list">
 
-    <div id="container">
+        </div>
+        <div class="menu">
+            <h1>Mot-Clé</h1>
+            <input type="text" placeholder="Rechercher...">
+            <h1>Prix maximum</h1>
+            <div>
+                <input type="range">
+                <span class="priceValue"></span>
+            </div>
+            <h1>Catégories</h1>
+            <div class="categories">
+                <span class="category active" data-category="all">TOUS</span>
+                <span class="category" data-category="suv">SUV</span>
+                <span class="category" data-category="sport">SPORT</span>
+                <span class="category" data-category="berline">BERLINE</span>
+                <span class="category" data-category="citadine">CITADINE</span>
+            </div>
+        </div>
 
     </div>
 
