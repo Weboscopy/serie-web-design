@@ -4,29 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modal / Popup</title>
+    <title>Drag N Drop</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="./app.js" defer></script>
+    <script defer src="./app.js"></script>
 </head>
 
 <body>
-    <section>
-
-    </section>
-    <dialog class="popup">
-        <button class="btn-close-popup">x</button>
-        <h1>Soldes <br> Exceptionnelles</h1>
-        <h3>Aujourd'hui tout à -50%</h3>
-    </dialog>
-    <section>
-        <button class="btn-open-modal">S'abonner</button>
-    </section>
-    <dialog class="modal">
-        <button class="btn-close-modal">x</button>
-        <h2>Recevoir notre newsletter !</h2>
-        <input type="email" placeholder="Renseigner votre e-mail">
-        <button class="btn-subscribe">S'abonner</button>
-    </dialog>
+    <div id="left">
+        <h3>En cours</h3>
+        <div class="item" draggable="true">Apprendre JavaScript</div>
+        <div class="item" draggable="true">Apprendre Python</div>
+        <div class="item" draggable="true">Apprendre Go</div>
+        <div class="item" draggable="true">Apprendre C#</div>
+        <div class="item" draggable="true">Apprendre Php</div>
+    </div>
+    <div id="right">
+        <h3>Terminé</h3>
+    </div>
 </body>
 
 </html>

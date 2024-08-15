@@ -1,49 +1,74 @@
+let items = document.querySelectorAll(".item")
+let leftBox = document.getElementById("left")
+let rightBox = document.getElementById("right")
 
-const popup = document.querySelector(".popup")
-const btnClosePopup = document.querySelector(".btn-close-popup")
-const modal = document.querySelector(".modal")
-const btnOpenModal = document.querySelector(".btn-open-modal")
-const btnCloseModal = document.querySelector(".btn-close-modal")
-const btnSubscribe = document.querySelector(".btn-subscribe")
 
-const app = () => {
-    popup.showModal();
-    btnClosePopup.addEventListener("click", () => {
-        popup.close()
+const initApp = () => {
+    items.forEach(item => {
+        item.addEventListener("dragstart", (e) => {
+            let selectedItem = e.target
+            selectedItem.classList.add("hold")
+
+            selectedItem.addEventListener("dragend", (e) => {
+                if (selectedItem) {
+                    selectedItem.classList.remove("hold")
+                }
+                selectedItem = null
+            })
+
+            rightBox.addEventListener("drop", (e) => {
+                if (selectedItem) {
+                    rightBox.appendChild(selectedItem)
+                    selectedItem.classList.remove("hold")
+                    rightBox.classList.remove("hovered")
+                }
+                selectedItem = null
+            })
+
+            rightBox.addEventListener("dragover", (e) => {
+                e.preventDefault()
+            })
+
+
+            leftBox.addEventListener("drop", (e) => {
+                if (selectedItem) {
+                    leftBox.appendChild(selectedItem)
+                    selectedItem.classList.remove("hold")
+                    leftBox.classList.remove("hovered")
+                }
+
+                selectedItem = null
+            })
+
+            leftBox.addEventListener("dragover", (e) => {
+                e.preventDefault()
+            })
+
+            rightBox.addEventListener("dragenter", (e) => {
+                setTimeout(() => {
+                    rightBox.classList.add("hovered")
+                }, 0)
+
+            })
+
+            leftBox.addEventListener("dragenter", (e) => {
+                setTimeout(() => {
+                    leftBox.classList.add("hovered")
+                }, 0)
+            })
+
+
+            rightBox.addEventListener("dragleave", (e) => {
+                rightBox.classList.remove("hovered")
+            })
+
+            leftBox.addEventListener("dragleave", (e) => {
+                leftBox.classList.remove("hovered")
+            })
+
+
+        })
     })
-
-    btnOpenModal.addEventListener("click", () => {
-        modal.showModal()
-    })
-
-    btnCloseModal.addEventListener("click", () => {
-        modal.close()
-    })
-
-    btnSubscribe.addEventListener("click", () => {
-        const email = document.querySelector("input").value
-        console.log(email)
-        modal.close()
-    })
-
-    document.body.addEventListener("click", (e) => {
-        if (e.target.tagName !== "DIALOG") return;
-
-        const rect = e.target.getBoundingClientRect();
-
-        const clickedInDialog = (
-            rect.top <= e.clientY &&
-            e.clientY <= rect.top + rect.height &&
-            rect.left <= e.clientX &&
-            e.clientX <= rect.left + rect.width
-        )
-
-
-        if (!clickedInDialog) {
-            e.target.close()
-        }
-    })
-
 }
 
-document.addEventListener("DOMContentLoaded", app)
+document.addEventListener("DOMContentLoaded", initApp)
