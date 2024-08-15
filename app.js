@@ -1,41 +1,49 @@
-const slideContainer = document.querySelector(".slide-container")
-const leftBtn = document.querySelector("#left")
-const rightBtn = document.querySelector("#right")
-const slides = document.querySelectorAll(".slide")
 
-const intervalTime = 4000
-let currentSlide = 0
-let interval = setInterval(autoPlay, intervalTime)
+const popup = document.querySelector(".popup")
+const btnClosePopup = document.querySelector(".btn-close-popup")
+const modal = document.querySelector(".modal")
+const btnOpenModal = document.querySelector(".btn-open-modal")
+const btnCloseModal = document.querySelector(".btn-close-modal")
+const btnSubscribe = document.querySelector(".btn-subscribe")
 
-leftBtn.addEventListener("click", () => {
-    currentSlide--
-    changeSlide()
-    resetInterval()
-})
+const app = () => {
+    popup.showModal();
+    btnClosePopup.addEventListener("click", () => {
+        popup.close()
+    })
 
-rightBtn.addEventListener("click", () => {
-    currentSlide++
-    changeSlide()
-    resetInterval()
-})
+    btnOpenModal.addEventListener("click", () => {
+        modal.showModal()
+    })
 
-function autoPlay() {
-    currentSlide++
-    changeSlide()
+    btnCloseModal.addEventListener("click", () => {
+        modal.close()
+    })
+
+    btnSubscribe.addEventListener("click", () => {
+        const email = document.querySelector("input").value
+        console.log(email)
+        modal.close()
+    })
+
+    document.body.addEventListener("click", (e) => {
+        if (e.target.tagName !== "DIALOG") return;
+
+        const rect = e.target.getBoundingClientRect();
+
+        const clickedInDialog = (
+            rect.top <= e.clientY &&
+            e.clientY <= rect.top + rect.height &&
+            rect.left <= e.clientX &&
+            e.clientX <= rect.left + rect.width
+        )
+
+
+        if (!clickedInDialog) {
+            e.target.close()
+        }
+    })
+
 }
 
-
-function changeSlide() {
-    if (currentSlide > slides.length - 1) {
-        currentSlide = 0
-    } else if (currentSlide < 0) {
-        currentSlide = slides.length - 1
-    }
-
-    slideContainer.style.transform = `translateX(${-currentSlide * 100}vw)`
-}
-
-function resetInterval() {
-    clearInterval(interval)
-    interval = setInterval(autoPlay, intervalTime)
-}
+document.addEventListener("DOMContentLoaded", app)
